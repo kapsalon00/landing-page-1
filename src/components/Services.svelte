@@ -44,6 +44,12 @@
       color: orange;
     }
   }
+  @media (min-width:960px){
+    .wrapper{
+      display:flex;
+      margin:50px;
+    }
+  }
 </style>
 
 <div class="services">

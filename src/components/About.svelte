@@ -15,6 +15,14 @@
       color: grey;
     }
   }
+
+  @media (min-width: 960px){
+    .about{
+      margin: 0 auto;
+      max-width:960px;
+    }
+    
+  } 
 </style>
 
 <div class="about">

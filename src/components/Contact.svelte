@@ -67,6 +67,19 @@
       }
     }
   }
+  @media (min-width:960px){
+    .wrapper{
+      margin:0 auto;
+    max-width:600px;
+}
+.info{
+  text-align:center;
+}
+.icons{
+  width:200px;
+  margin: 0 auto;
+}
+  }
 </style>
 
 <div class="wrapper">

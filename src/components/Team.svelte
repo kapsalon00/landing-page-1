@@ -6,7 +6,7 @@
   .wrapper {
     background-color: #f5f5f5;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 30px;
     h2 {
       color: grey;
     }
@@ -22,12 +22,31 @@
       padding-bottom: 10px;
     }
   }
+  @media (min-width:960px){
+    .wrapper{
+      max-width:960px;
+      margin:0 auto;
+      padding: 30px;
+      
+    }
+    .cards-layout{
+      display:flex;
+      .card-wrapper{
+      img{
+        height:200px;
+        object-fit:cover;
+      }
+      }
+    }
+  }
 </style>
 
 <div class="wrapper">
   <h1>The team</h1>
   <h2>Meet us!</h2>
 
+
+<div class="cards-layout">
   <div class="card-wrapper">
     <img src="assets/person3.jpg" alt="laptop one" />
     <h1>Steve Regular</h1>
@@ -52,4 +71,6 @@
       Vivamus pharetra, mauris vitae cursus ultricies.
     </p>
   </div>
+
+</div>
 </div>

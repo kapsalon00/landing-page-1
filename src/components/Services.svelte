@@ -8,6 +8,7 @@
   .services {
     background-color: #f5f5f5;
     text-align: center;
+    padding: 30px 0;
   }
 
   .wrapper {
@@ -44,10 +45,14 @@
       color: orange;
     }
   }
-  @media (min-width:960px){
-    .wrapper{
-      display:flex;
-      margin:50px;
+  @media (min-width: 960px) {
+    .services {
+      padding: 50px 0;
+    }
+    .wrapper {
+      margin: 0 auto;
+      max-width: 960px;
+      display: flex;
     }
   }
 </style>

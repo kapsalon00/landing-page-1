@@ -13,6 +13,9 @@
 </script>
 
 <style lang="scss">
+  .layout-wrapper {
+    background-color: #f5f5f5;
+  }
   .wrapper {
     background-color: #f5f5f5;
     display: flex;
@@ -67,49 +70,55 @@
       }
     }
   }
-  @media (min-width:960px){
-    .wrapper{
-      margin:0 auto;
-    max-width:600px;
-}
-.info{
-  text-align:center;
-}
-.icons{
-  width:200px;
-  margin: 0 auto;
-}
+  @media (min-width: 960px) {
+    .wrapper {
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    .info {
+      text-align: center;
+    }
+    .icons {
+      width: 200px;
+      margin: 0 auto;
+    }
   }
 </style>
 
-<div class="wrapper">
-  <h1>Contact</h1>
-  <h2>Get in touch!</h2>
-  <form on:submit|preventDefault={handleSubmit}>
-    <input bind:value={name} placeholder="Name" type="text" />
-    <input bind:value={email} placeholder="E-mail" type="text" />
-    <textarea bind:value={message} placeholder="Message" rows="4" type="text" />
-    <button>Send a message</button>
-  </form>
-  <div class="info">
-    <h2>Our company</h2>
-    <h3>55 Random City</h3>
-    <h3>1234 Some Street in City Name</h3>
-    <div>
-      <h3>tel. 123123123</h3>
-      <h3>Cotact@companyname.com</h3>
-      <div class="icons">
-        <div>
-          <TiSocialFacebookCircular />
-        </div>
-        <div>
-          <TiSocialTwitter />
-        </div>
-        <div>
-          <TiSocialGithub />
-        </div>
-        <div>
-          <TiSocialGooglePlusCircular />
+<div class="layout-wrapper">
+  <div class="wrapper">
+    <h1>Contact</h1>
+    <h2>Get in touch!</h2>
+    <form on:submit|preventDefault={handleSubmit}>
+      <input bind:value={name} placeholder="Name" type="text" />
+      <input bind:value={email} placeholder="E-mail" type="text" />
+      <textarea
+        bind:value={message}
+        placeholder="Message"
+        rows="4"
+        type="text" />
+      <button>Send a message</button>
+    </form>
+    <div class="info">
+      <h2>Our company</h2>
+      <h3>55 Random City</h3>
+      <h3>1234 Some Street in City Name</h3>
+      <div>
+        <h3>tel. 123123123</h3>
+        <h3>Cotact@companyname.com</h3>
+        <div class="icons">
+          <div>
+            <TiSocialFacebookCircular />
+          </div>
+          <div>
+            <TiSocialTwitter />
+          </div>
+          <div>
+            <TiSocialGithub />
+          </div>
+          <div>
+            <TiSocialGooglePlusCircular />
+          </div>
         </div>
       </div>
     </div>

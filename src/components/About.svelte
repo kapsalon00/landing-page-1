@@ -5,6 +5,7 @@
 <style lang="scss">
   .about {
     text-align: center;
+    padding: 30px 0;
     h1 {
       color: black;
       margin-bottom: 0px;
@@ -16,13 +17,12 @@
     }
   }
 
-  @media (min-width: 960px){
-    .about{
+  @media (min-width: 960px) {
+    .about {
       margin: 0 auto;
-      max-width:960px;
+      max-width: 960px;
     }
-    
-  } 
+  }
 </style>
 
 <div class="about">

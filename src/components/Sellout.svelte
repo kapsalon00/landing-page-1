@@ -25,6 +25,11 @@
       border-radius: 5px;
     }
   }
+  @media (min-width: 960px) {
+    .wrapper {
+      background-size: cover !important;
+    }
+  }
 </style>
 
 <div class="wrapper" style="background: url('{src}') no-repeat center center">

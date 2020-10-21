@@ -1,5 +1,10 @@
 <script>
+  import Modal from "./Modal.svelte";
+
   let src = "assets/bgc.jpg";
+  let pageWidth;
+
+  let showModal = false;
 </script>
 
 <style lang="scss">
@@ -10,7 +15,6 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    filter: grayscale(0%);
   }
 
   .nav-wrapper {
@@ -71,26 +75,95 @@
       border-radius: 5px;
     }
   }
+  .links-wrapper {
+    a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      background-color: black;
+      padding: 5px 10px;
+      &:hover {
+        color: orange;
+        cursor: pointer;
+      }
+    }
+  }
+  .navs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a {
+      margin: 10px;
+      width: 100px;
+      text-align: center;
+      font-size: 30px;
+      color: grey;
+      font-weight: bold;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  @media (min-width: 960px) {
+    .image {
+      background-size: cover !important;
+    }
+    .layout-wrapper {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+  }
 </style>
 
-<div class="image" style="background: url('{src}') no-repeat center center">
-  <div class="nav-wrapper">
-    <div class="dark-bgc">
-      <h1>Landing Page</h1>
+<svelte:window bind:outerWidth={pageWidth} />
+
+<div class="image" style="background: url({src}) no-repeat center center">
+  {#if showModal && pageWidth < 960}
+    <Modal on:close={() => (showModal = false)}>
+      <div class="navs" slot="navs">
+        <a on:click={() => (showModal = false)} href="#about">About</a>
+        <a on:click={() => (showModal = false)} href="#services">Services</a>
+        <a on:click={() => (showModal = false)} href="#portfolio">Portfolio</a>
+        <a on:click={() => (showModal = false)} href="#team">Team</a>
+        <a on:click={() => (showModal = false)} href="#contact">Contact</a>
+      </div>
+    </Modal>
+  {/if}
+  <div class="layout-wrapper">
+    <div class="nav-wrapper">
+      <div class="dark-bgc">
+        <h1>Landing Page</h1>
+      </div>
+      {#if pageWidth < 960}
+        <div
+          class="hamburger"
+          on:click={() => {
+            showModal = true;
+          }}>
+          <div />
+          <div />
+          <div />
+        </div>
+      {:else}
+        <div class="links-wrapper">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
+        </div>
+      {/if}
     </div>
-    <div class="hamburger">
-      <div />
-      <div />
-      <div />
+    <div class="things">
+      <div class="dark">
+        <h1>Lorem ipsum dolor</h1>
+      </div>
+      <div class="dark">
+        <h2>Just for you</h2>
+      </div>
+      <button>Download Now</button>
     </div>
-  </div>
-  <div class="things">
-    <div class="dark">
-      <h1>Lorem ipsum dolor</h1>
-    </div>
-    <div class="dark">
-      <h2>Just for you</h2>
-    </div>
-    <button>Download Now</button>
   </div>
 </div>
